@@ -52,6 +52,9 @@ int classify(int check){
         printf("YOU DIED\n");
         return 2;
     }
+    else {
+        return -1;
+    }
 }
 void display_perm(int perm){
     if(perm==1){
@@ -66,5 +69,5 @@ void main(){
     pr=3;
     int check=tile_check(pr,pc);
     int perm=classify(check);
-
+    display_perm(perm);
 }
