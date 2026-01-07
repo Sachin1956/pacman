@@ -28,8 +28,29 @@ void mapdisplay(char map[10][11]){
 
     }
 }
+int tile_check(int r, int c){
+    char pos = map[r][c];
+    if(pos=='#')
+        return 0;
+    else if(pos=='.')
+        return 1;
+    else if(pos=='g')
+        return 2;
+    else
+        return -1;
+}
 void main(){
-    pc=3;
+    pc=0;
     pr=3;
-mapdisplay(map);
+    int check=tile_check(pr,pc);
+    if(check==0)
+        printf("Invalid position\n");
+    else if(check==1||check==-1){
+        printf("Valid position\n");
+        mapdisplay(map);
+    }
+    else if(check==2){
+        printf("YOU DIED\n");
+    }
+
 }
