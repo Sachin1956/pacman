@@ -40,18 +40,31 @@ int tile_check(int r, int c){
         return -1;
 }
 int classify(int check){
-    if(check==0)
+    if(check==0){
         printf("Invalid position\n");
+        return 0;
+    }
     else if(check==1||check==-1){
         printf("Valid position\n");
-        mapdisplay(map);
+        return 1;
     }
-    else if(check==2)
+    else if(check==2){
         printf("YOU DIED\n");
+        return 2;
+    }
+}
+void display_perm(int perm){
+    if(perm==1){
+        mapdisplay(map);
+        return;
+    }
+    else
+        return;
 }
 void main(){
     pc=0;
     pr=3;
     int check=tile_check(pr,pc);
-    classify(check);
+    int perm=classify(check);
+
 }
